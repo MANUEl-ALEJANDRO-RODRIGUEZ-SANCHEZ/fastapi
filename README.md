@@ -1,27 +1,64 @@
-# Deploy FastAPI on Render
+# 🚀 FastAPI: List of Names 👥
 
-Use this repo as a template to deploy a Python [FastAPI](https://fastapi.tiangolo.com) service on Render.
+Welcome to this simple yet powerful API project using **FastAPI** in Python! 🎉 Here we will show you how to build and run an API that returns a list of names with just a few steps.
 
-See https://render.com/docs/deploy-fastapi or follow the steps below:
+## 🌟 Objective
 
-## Manual Steps
+The goal of this project is to show how you can create a basic **API** with **FastAPI** in Python to expose an endpoint that returns a list of names. Simple, right? 😎
 
-1. You may use this repository directly or [create your own repository from this template](https://github.com/render-examples/fastapi/generate) if you'd like to customize the code.
-2. Create a new Web Service on Render.
-3. Specify the URL to your new repository or this repository.
-4. Render will automatically detect that you are deploying a Python service and use `pip` to download the dependencies.
-5. Specify the following as the Start Command.
+## 🛠️ Installation
 
-    ```shell
-    uvicorn main:app --host 0.0.0.0 --port $PORT
-    ```
+### Requirements
+- **Python 3.7+**
+- **FastAPI**
+- **Uvicorn**
 
-6. Click Create Web Service.
+If you don't have **FastAPI** and **Uvicorn**, install them by running the following command in your terminal:
 
-Or simply click:
+```bash
+pip install fastapi uvicorn
+```
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/render-examples/fastapi)
+### How to run the application:
 
-## Thanks
+To get the API up and running, run the following command in your terminal:
 
-Thanks to [Harish](https://harishgarg.com) for the [inspiration to create a FastAPI quickstart for Render](https://twitter.com/harishkgarg/status/1435084018677010434) and for some sample code!
+```bash
+uvicorn main:app --reload
+```
+
+Boom! 🚀 Your API is running at `http://127.0.0.1:8000` 🎉
+
+## 📄 Endpoints
+
+### 🔍 `GET /names`
+
+This endpoint returns a simple list with a few names:
+
+```json
+["John", "Maria", "Pedro"]
+```
+
+### 🧠 Code Explanation
+
+1. **FastAPI**: We use the `FastAPI()` class to create our application.
+2. **@app.get("/names")**: This decorator defines an endpoint for the `/names` route that responds to `GET` requests.
+3. **get_names**: This function is asynchronous and returns a list with three names when someone calls the endpoint.
+4. **Uvicorn**: We use `uvicorn` to spin up the server on port `8000`.
+
+## ✨ Why FastAPI?
+
+**FastAPI** is amazing for several reasons:
+- **Easy to use**: You can get started quickly, even if you're new to API development.
+- **Fast and efficient**: Built on Starlette and Pydantic, making it extremely fast. ⚡
+- **Great documentation**: Guides you through every step so you don't get lost. 📚
+- **Automatically generates documentation**: Yes, you can view your API documentation in `/docs` or `/redoc`!
+
+## 📚 Additional resources:
+
+- [Official FastAPI documentation](https://fastapi.tiangolo.com/)
+- [FastAPI tutorials](https://fastapi.tiangolo.com/tutorial/)
+
+## Author
+
+### Manuel Rodriguez
